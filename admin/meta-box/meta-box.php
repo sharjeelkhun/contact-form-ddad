@@ -113,6 +113,48 @@ Formio.builder(document.getElementById('builder'),
 });
    
 </script>
+
+
+
+<!-- Email to New Ant Design Code -->
+<script>
+  // Get a reference to the Ant Design Select component
+  const { Select } = antd;
+
+  // Create an array of tag options
+  const tagOptions = [];
+  for (let i = 10; i < 36; i++) {
+    tagOptions.push({
+      value: i.toString(36) + i,
+      label: i.toString(36) + i,
+    });
+  }
+
+  // Create a function to handle tag changes
+  function handleChange(value) {
+    console.log(`Selected: ${value}`);
+  }
+
+  // Render the Tags Select component
+  ReactDOM.render(
+    React.createElement(
+      Select,
+      {
+        mode: 'tags',
+        style: { width: '100%' },
+        placeholder: 'Enter Email',
+        onChange: handleChange,
+        options: tagOptions,
+      },
+      null
+    ),
+    document.getElementById('emailtagselect_to')
+  );
+</script>
+<!-- Email to New Ant Design Code -->
+
+
+
 	<?php
 }
 
@@ -154,7 +196,7 @@ function render_email_meta_box($post) {
     echo '    <div class="ant-col ant-col-18 ant-form-item-control">';
     echo '      <div class="ant-form-item-control-input">';
     echo '        <div class="ant-form-item-control-input-content">';
-    echo '          <input class="ant-input ant-input-lg" type="text" name="email_to" value="' . esc_attr($to) . '" required placeholder="Enter to Email" />';
+    echo '          <div id="emailtagselect_to" name="email_to" ></div><input class="ant-input ant-input-lg" type="text" name="email_to" value="' . esc_attr($to) . '" required placeholder="Enter to Email" />';
     echo '        </div>';
     echo '      </div>';
     echo '    </div>';
