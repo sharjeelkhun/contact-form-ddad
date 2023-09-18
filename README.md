@@ -17,7 +17,7 @@ Contact Form X is a simple yet flexible contact form plugin for WordPress. It al
 
 ## Installation
 
-1. Download the latest release from the [GitHub repository](https://github.com/yourusername/contact-form-x/releases).
+1. Download the latest release from the [GitHub repository](https://github.com/sharjeelkhun/contact-form-x/releases).
 2. Upload the plugin files to your WordPress plugins directory.
 3. Activate the plugin through the WordPress admin panel.
 
