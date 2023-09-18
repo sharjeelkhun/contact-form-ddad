@@ -66,8 +66,7 @@ function cf_x_email_section_callback()
 
 function cf_x_email_setting_callback() 
 {
-  $value = get_option( 'cf_x_email_setting' );
-  
+  $value = get_option( 'cf_x_email_setting' );  
   echo '<input type="email" name="cf_x_email_setting" value="' . esc_attr( $value ) . '">';
 }
 
@@ -91,12 +90,11 @@ add_action( 'add_meta_boxes', 'wporg_add_custom_box' );
 function wporg_custom_box_html( $post ) 
 {
   $json = get_post_meta($post->ID, 'components', true );
-  echo $json;
-	?>
+  //echo $json;
+?>
 
     <div id="builder"></div>
-    <textarea id="components" name="components" style="display:none;" ></textarea>
-    
+    <textarea id="components" name="components" style="display:none;" ></textarea>    
     <script src="https://cdn.form.io/formiojs/formio.full.min.js"></script>
 
 <script>
@@ -113,8 +111,6 @@ Formio.builder(document.getElementById('builder'),
 });
    
 </script>
-
-
 
 <!-- Email to New Ant Design Code -->
 <script>
@@ -177,7 +173,8 @@ document.getElementById('publish').addEventListener('click', function() {
 
 
 // Add custom meta box to the 'contact-form-x' post type
-function add_custom_meta_box() {
+function add_custom_meta_box() 
+{
   add_meta_box(
     'contact_form_x_email_meta_box', 
     'Email Settings', 
@@ -189,7 +186,8 @@ function add_custom_meta_box() {
 }
 add_action('add_meta_boxes', 'add_custom_meta_box');
 
-function render_email_meta_box($post) {
+function render_email_meta_box($post) 
+{
   // Retrieve existing values from the database
   $to = get_post_meta($post->ID, 'email_to', true);
   $subject = get_post_meta($post->ID, 'email_subject', true);
@@ -234,7 +232,6 @@ function render_email_meta_box($post) {
     echo '    </div>';
     echo '  </div>';
     echo '</div>';
-
   
 }
 
@@ -260,9 +257,6 @@ function save_email_meta_box_11($post_id)
 
 }
 add_action('save_post', 'save_email_meta_box_11');
-
-
-
 
 
 function add_shortcode_metabox() 
@@ -339,10 +333,6 @@ function shortcode_metabox_callback( $post ) {
     document.getElementById('root')
   );
 </script>
-
-
-
-
 
 <script>
   const { message } = antd;

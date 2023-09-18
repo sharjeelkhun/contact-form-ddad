@@ -20,34 +20,13 @@ if ( ! defined( 'ABSPATH' ) )
 }
 
 
-function generate_form_contact_form_x($post_id) {
+function generate_form_contact_form_x($post_id) 
+{
     $json =  get_post_meta($post_id, 'components', true );
-    //$to = get_post_meta($post_id, 'email_to', true);
-    //$subject = get_post_meta($post_id, 'email_subject', true);
     $array = json_decode($json, true);
-    ?>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script> -->
+?>
+
     <div ng-app="myApp" ng-controller="formController" >
-      <!-- <pre>
-      {{<?php //print_r($json);?> }}
-      </pre> -->
-
-
-      <!-- components: <?php //print_r($json);?> -->
-
-      <!-- <script>
-Formio.builder(document.getElementById('builder'), {
-  components: [
-        // Here is the form builder instance.
-<?php //print_r($json); ?>
-  ]
-}).then((builder) => {
-
-  // Here is the form builder instance.
-  console.log(builder);
-});
-</script> -->
-
 
     <!-- React Liberary -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/antd@4.16.13/dist/antd.min.css">
@@ -91,18 +70,12 @@ Formio.builder(document.getElementById('builder'), {
   components: [
   	<?php //echo $json; ?>
   ]
-});</script>
+});
+</script>
 
         <div id="formio" style="padding: 50px;"></div>
         <input type="hidden" id="contact-form-x-id" value="<?php echo $post_id; ?>"/>
         <div id="success-message"></div>
-        <script>
-        //  Formio.createForm(document.getElementById('formio'), 
-        //  {
-
-        //    components: <?php print_r($json); ?>                    
-        // });  
-        </script>
 
 <script>
   // Add this line to import the Ant Design message component
@@ -158,21 +131,21 @@ Formio.builder(document.getElementById('builder'), {
     </div>
 
 
-    <script>
-          var formData = <?php print_r($json);?>;
-
+<script>
+    var formData = <?php print_r($json);?>;
 
 createForm(formData);
-
-function createForm(arr){
+function createForm(arr)
+{
     var $formTmp = $('<form></form>');
+    arr.forEach( function(obj, idx) 
+{
+    var $fieldSet,
+    $selctOpts = $('<select name=""></select>'),
+    inputType = obj.type;
 
-    arr.forEach( function(obj, idx) {
-        var $fieldSet,
-            $selctOpts = $('<select name=""></select>'),
-inputType = obj.type;
-
-        switch (inputType){
+        switch (inputType)
+      {
             case 'text':
                 $fieldSet = $('<label for="">'+obj.label+'</label>');
 
@@ -195,15 +168,15 @@ inputType = obj.type;
             default:
                 //alert('There was no input type found.');
                 break;
-}
+        }
 });
 
     // render to body.
     $('body').append($formTmp);
 
-
     // Loop for the select options.
-    function addOptions(elem, arr){
+    function addOptions(elem, arr)
+    {
         arr.forEach(function(obj){elem.append('<option value="'+obj.sec+'">'+obj.label+'</option>');});
     }
 }
@@ -211,16 +184,17 @@ inputType = obj.type;
 
 
     <?php
-    $html = '
-    <form><div class="fields">';
+    $html = '<form><div class="fields">';
     
-    foreach ($array as $field) {
+    foreach ($array as $field) 
+    {
       $type = $field['type'];
       $label = $field['label'];
       $key = $field['key'];
       $input = '';
   
-      switch ($type) {
+      switch ($type) 
+      {
         case 'textfield':
           $input = '<input type="text" name="' . $key . '">';
           break;
@@ -252,7 +226,8 @@ inputType = obj.type;
         case 'selectboxes':
           $values = $field['values'];
           $input = '';
-          foreach ($values as $value) {
+          foreach ($values as $value) 
+          {
             $input .= '<input type="checkbox" name="' . $key . '[]" value="' . $value['value'] . '">' . $value['label'] . '<br>';
           }
           break;
@@ -268,7 +243,8 @@ inputType = obj.type;
         case 'select':
           $values = $field['data']['values'];
           $input = '<select name="' . $key . '">';
-          foreach ($values as $value) {
+          foreach ($values as $value) 
+          {
             $input .= '<option value="' . $value['value'] . '">' . $value['label'] . '</option>';
           }
           $input .= '</select>';
@@ -281,7 +257,8 @@ inputType = obj.type;
         case 'radio':
           $values = $field['values'];
           $input = '';
-          foreach ($values as $value) {
+          foreach ($values as $value) 
+          {
             $input .= '<input type="radio" name="' . $key . '" value="' . $value['value'] . '">' . $value['label'] . '<br>';
           }
           break;
@@ -311,7 +288,8 @@ inputType = obj.type;
     
     return $html;
   }
-function contact_form_x($atts) {
+function contact_form_x($atts) 
+{
     $default = array(
         'id' => 1,
     );
@@ -321,24 +299,8 @@ function contact_form_x($atts) {
     return $form_html;
 }
 add_shortcode('contact_form_x', 'contact_form_x');
-?>
-
-<!-- <script>
-Formio.builder(document.getElementById('builder'), {
-  components: [
-    <?php //echo $json; ?>
-  ]
-}).then((builder) => {
-
-  // Here is the form builder instance.
-  console.log(builder);
-});
-</script> -->
-<?php
 
 define('PLUGINS_URL',plugin_dir_path( __FILE__ ));
 include( PLUGINS_URL.'admin/custom-post-type/post-type.php');
 include( PLUGINS_URL.'admin/meta-box/meta-box.php');
 include( PLUGINS_URL.'function.php');
-
-
