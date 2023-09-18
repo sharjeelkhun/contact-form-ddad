@@ -118,38 +118,55 @@ Formio.builder(document.getElementById('builder'),
 
 <!-- Email to New Ant Design Code -->
 <script>
-  // Get a reference to the Ant Design Select component
-  const { Select } = antd;
+// Get a reference to the Ant Design Select component
+const { Select } = antd;
 
-  // Create an array of tag options
-  const tagOptions = [];
-  for (let i = 10; i < 36; i++) {
-    tagOptions.push({
-      value: i.toString(36) + i,
-      label: i.toString(36) + i,
-    });
+// Create an array of tag options
+const tagOptions = [];
+for (let i = 1; i < 1; i++) {
+  tagOptions.push({
+    value: i.toString + i,
+    label: i.toString + i,
+  });
+}
+
+// Create a function to handle tag changes
+function handleChange(value) {
+  console.log(`Selected: ${value}`);
+  document.getElementById('emailtagselect_to_value').value = value.join(',');
+}
+
+// Retrieve the initial selected tags from the hidden input field
+const initialTags = document.getElementById('emailtagselect_to_value').value.split(',');
+
+// Render the Tags Select component
+const selectComponent = React.createElement(
+  Select,
+  {
+    mode: 'tags',
+    style: { width: '100%' },
+    placeholder: 'Enter Email',
+    onChange: handleChange,
+    options: tagOptions,
+    defaultValue: initialTags,
   }
+);
 
-  // Create a function to handle tag changes
-  function handleChange(value) {
-    console.log(`Selected: ${value}`);
-  }
+ReactDOM.render(
+  selectComponent,
+  document.getElementById('emailtagselect_to')
+);
 
-  // Render the Tags Select component
+// Update the select component value when the publish or update button is clicked
+document.getElementById('publish').addEventListener('click', function() {
+  const selectedTags = document.getElementById('emailtagselect_to_value').value.split(',');
+  const updatedSelectComponent = React.cloneElement(selectComponent, { defaultValue: selectedTags });
   ReactDOM.render(
-    React.createElement(
-      Select,
-      {
-        mode: 'tags',
-        style: { width: '100%' },
-        placeholder: 'Enter Email',
-        onChange: handleChange,
-        options: tagOptions,
-      },
-      null
-    ),
+    updatedSelectComponent,
     document.getElementById('emailtagselect_to')
   );
+});
+
 </script>
 <!-- Email to New Ant Design Code -->
 
@@ -188,7 +205,7 @@ function render_email_meta_box($post) {
     <script src="https://cdn.jsdelivr.net/npm/antd@4.16.13/dist/antd.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">';
 
-    echo '<div class="ant-form-item m-0 mt-3">';
+    echo '<div class="ant-form-item m-0 mt-3 mb-3">';
     echo '  <div class="ant-row ant-form-item-row">';
     echo '    <div class="ant-col ant-col-6 ant-form-item-label text-left">';
     echo '      <label class="" title="To">To</label>';
@@ -196,12 +213,13 @@ function render_email_meta_box($post) {
     echo '    <div class="ant-col ant-col-18 ant-form-item-control">';
     echo '      <div class="ant-form-item-control-input">';
     echo '        <div class="ant-form-item-control-input-content">';
-    echo '          <div id="emailtagselect_to" name="email_to" ></div><input class="ant-input ant-input-lg" type="text" name="email_to" value="' . esc_attr($to) . '" required placeholder="Enter to Email" />';
+    echo '          <div id="emailtagselect_to" name="email_to_ant" ></div><input  id="emailtagselect_to_value" class="ant-input ant-input-lg" type="hidden" name="email_to" value="' . esc_attr($to) . '" required placeholder="Enter to Email" />';
     echo '        </div>';
     echo '      </div>';
     echo '    </div>';
     echo '  </div>';
     echo '</div>';
+
 
 //     function add_custom_metabox() 
 //   {
@@ -256,7 +274,7 @@ function save_email_meta_box_11($post_id)
   // Verify the nonce before proceeding
   if (!isset($_POST['contact_form_x_email_meta_box_nonce']) || !wp_verify_nonce($_POST['contact_form_x_email_meta_box_nonce'], 'contact_form_x_email_meta_box'))
       return;
-
+      print_r($_POST);
   // Check if user has permission to save data
   if (!current_user_can('edit_post', $post_id))
       return;
@@ -273,6 +291,7 @@ function save_email_meta_box_11($post_id)
 
   $email_subject = isset($_POST['email_subject']) ? sanitize_text_field($_POST['email_subject']) : '';
   update_post_meta($post_id, 'email_subject', $email_subject);
+
 }
 add_action('save_post', 'save_email_meta_box_11');
 
@@ -411,3 +430,5 @@ function my_custom_shortcode_function( $post_id )
 //   echo  get_post_meta($post_id , 'components', true );
 // }
 // add_shortcode('contact_form_x', 'contact_form_x');
+
+

@@ -396,3 +396,44 @@ function save_attachment($data, $name) {
 
 // add_action('wp_before_admin_bar_render', 'hide_view_post_from_admin_bar');
 //HIDE ADMIN BAR VIEW POST BUTTON ON HEADER OF ADMIN IN SINGLE POST OF FORM
+
+
+
+function hide_post_type_options() 
+{
+    global $post;
+
+    // Check if it's your desired post type
+    if ($post->post_type === 'contact-form-x') {
+        ?>
+        <style>
+            .post-type-contact-form-x .misc-pub-section.curtime.misc-pub-curtime a,
+            .post-type-contact-form-x div#visibility,
+            .post-type-contact-form-x .misc-pub-section.misc-pub-post-status a,
+            .post-type-contact-form-x #minor-publishing-actions,
+            .post-type-contact-form-x .row-actions span.view,
+            .post-type-contact-form-x .row-actions span.inline.hide-if-no-js
+            {
+                display: none;
+            }
+        </style>
+        <?php
+    }
+}
+add_action('admin_head', 'hide_post_type_options');
+
+
+
+
+
+function remove_view_option_from_admin_bar() 
+{
+    global $wp_admin_bar, $post;
+
+    // Check if it's your desired post type
+    if ($post && $post->post_type === 'contact-form-x') {
+        $wp_admin_bar->remove_menu('view');
+    }
+}
+add_action('wp_before_admin_bar_render', 'remove_view_option_from_admin_bar');
+
