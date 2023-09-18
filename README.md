@@ -51,8 +51,8 @@ This project is licensed under the [GPL-2.0 License](LICENSE).
 
 ## Author
 
-- Author: Your Name
-- Website: [https://vibrantmediainc.com](https://vibrantmediainc.com)
+- Author: Sharjeel Khan
+- Website: [https://beacons.ai/sharjeelkhan](https://beacons.ai/sharjeelkhan)
 
 ## Acknowledgments
 
