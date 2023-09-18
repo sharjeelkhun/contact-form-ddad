@@ -220,33 +220,6 @@ function render_email_meta_box($post) {
     echo '  </div>';
     echo '</div>';
 
-
-//     function add_custom_metabox() 
-//   {
-//       add_meta_box(
-//           'custom_metabox_id',          // Unique ID
-//           'Custom Metabox',             // Title
-//           'render_custom_metabox',      // Callback function to display the metabox content
-//           'post',                        // Post type (e.g., 'post', 'page', or a custom post type)
-//           'normal',                     // Context (e.g., 'normal', 'advanced', or 'side')
-//           'high'                        // Priority (e.g., 'high', 'low')
-//       );
-//   }
-//   add_action('add_meta_boxes', 'add_custom_metabox');
-
-//   function render_custom_metabox($post) {
-//     // Retrieve the saved value (if any)
-//     $custom_value = get_post_meta($post->ID, 'custom_value', true);
-
-//     // Add a nonce field for security
-//     wp_nonce_field('custom_metabox_nonce', 'custom_metabox_nonce');
-
-//     // Display an input field
-//     echo '<label for="custom_value">Custom Value:</label>';
-//     echo '<input type="text" id="custom_value" name="custom_value" value="' . esc_attr($custom_value) . '" />';
-// }
-
-
     echo '<div class="ant-form-item m-0">';
     echo '  <div class="ant-row ant-form-item-row">';
     echo '    <div class="ant-col ant-col-6 ant-form-item-label text-left">';
@@ -278,13 +251,6 @@ function save_email_meta_box_11($post_id)
   // Check if user has permission to save data
   if (!current_user_can('edit_post', $post_id))
       return;
-
-  // Save custom fields
-  // $email_to = isset($_POST['email_to_123456']) ? sanitize_email($_POST['email_to_123456']) : '';
-  // update_post_meta($post_id, 'email_to_123456', $email_to);
-
-    // Save custom field value
-
 
   $email_to = isset($_POST['email_to']) ? sanitize_text_field($_POST['email_to']) : '';
   update_post_meta($post_id, 'email_to', $email_to);
@@ -419,16 +385,3 @@ function my_custom_shortcode_function( $post_id )
   
   return $shortcode;
 }
-
-
-// function contact_form_x($atts) {
-//   $default = array(
-//       'id' => 1,
-//   );
-//   $a = shortcode_atts($default, $atts);
-//   $post_id =  $a['id'];
-//   echo  get_post_meta($post_id , 'components', true );
-// }
-// add_shortcode('contact_form_x', 'contact_form_x');
-
-

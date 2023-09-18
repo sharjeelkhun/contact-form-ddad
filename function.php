@@ -360,45 +360,6 @@ function save_attachment($data, $name) {
     }
 }
 
-
-
-
-//HIDE PUBLICSH BUTOTN ACTIONS LIKE DRAFT AND OTHERS IN SINGLE POST OF FORM
-// function hide_publishing_actions(){
-//     $my_post_type = 'contact-form-x';
-//     global $post;
-//     if($post->post_type == $my_post_type){
-//         echo '
-//             <style type="text/css">
-//                 #misc-publishing-actions,
-//                 #minor-publishing-actions{
-//                     display:none;
-//                 }
-//             </style>
-//         ';
-//     }
-// }
-// add_action('admin_head-post.php', 'hide_publishing_actions');
-// add_action('admin_head-post-new.php', 'hide_publishing_actions');
-//HIDE PUBLICSH BUTOTN ACTIONS LIKE DRAFT AND OTHERS IN SINGLE POST OF FORM
-
-
-
-//HIDE ADMIN BAR VIEW POST BUTTON ON HEADER OF ADMIN IN SINGLE POST OF FORM
-// function hide_view_post_from_admin_bar() {
-//     global $wp_admin_bar, $post;
-    
-//     // Replace 'your_custom_post_type' with the actual post type name
-//     if (is_admin() && 'contact-form-x' === $post->post_type) {
-//         $wp_admin_bar->remove_menu('view');
-//     }
-// }
-
-// add_action('wp_before_admin_bar_render', 'hide_view_post_from_admin_bar');
-//HIDE ADMIN BAR VIEW POST BUTTON ON HEADER OF ADMIN IN SINGLE POST OF FORM
-
-
-
 function hide_post_type_options() 
 {
     global $post;
@@ -423,9 +384,6 @@ function hide_post_type_options()
 add_action('admin_head', 'hide_post_type_options');
 
 
-
-
-
 function remove_view_option_from_admin_bar() 
 {
     global $wp_admin_bar, $post;
@@ -436,4 +394,3 @@ function remove_view_option_from_admin_bar()
     }
 }
 add_action('wp_before_admin_bar_render', 'remove_view_option_from_admin_bar');
-
