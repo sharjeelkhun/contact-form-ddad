@@ -236,16 +236,17 @@ function render_email_meta_box($post)
   
 }
 
-// Save the custom meta box data
-function save_email_meta_box_11($post_id) 
-{
+function save_email_meta_box_11($post_id) {
   if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
       return;
+
+  // Start output buffering
+  ob_start();
 
   // Verify the nonce before proceeding
   if (!isset($_POST['contact_form_ddad_email_meta_box_nonce']) || !wp_verify_nonce($_POST['contact_form_ddad_email_meta_box_nonce'], 'contact_form_ddad_email_meta_box'))
       return;
-      print_r($_POST);
+
   // Check if user has permission to save data
   if (!current_user_can('edit_post', $post_id))
       return;
@@ -256,6 +257,8 @@ function save_email_meta_box_11($post_id)
   $email_subject = isset($_POST['email_subject']) ? sanitize_text_field($_POST['email_subject']) : '';
   update_post_meta($post_id, 'email_subject', $email_subject);
 
+  // End output buffering and discard any captured output
+  ob_end_clean();
 }
 add_action('save_post', 'save_email_meta_box_11');
 

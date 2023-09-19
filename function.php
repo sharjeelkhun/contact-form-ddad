@@ -257,8 +257,10 @@ function contact_form_ddad_submit() {
 
 
 // Include the Location fields in the email template
-foreach ($form_data as $field_name => $field_value) {
-    if (strpos($field_name, 'address') === 0 && is_array($field_value) && isset($field_value['display_name'])) {
+foreach ($form_data as $field_name => $field_value) 
+{
+    if (strpos($field_name, 'address') === 0 && is_array($field_value) && isset($field_value['display_name'])) 
+    {
         $html .= '
         <div class="field">
             <label>' . $field_name . ':</label>
@@ -272,12 +274,15 @@ foreach ($form_data as $field_name => $field_value) {
 
 // Add survey fields
 // Loop through dynamic survey fields
-foreach ($form_data as $field_name => $field_value) {
-    if (strpos($field_name, 'survey') === 0 && is_array($field_value)) {
+foreach ($form_data as $field_name => $field_value) 
+{
+    if (strpos($field_name, 'survey') === 0 && is_array($field_value)) 
+    {
         $html .= '<div class="field">';
         $html .= '<label>' . $field_name . ':</label>';
 
-        foreach ($field_value as $survey_field => $survey_value) {
+        foreach ($field_value as $survey_field => $survey_value) 
+        {
             $html .= '<div class="field">';
             $html .= '<label>' . $survey_field . ':</label>';
             $html .= '<p>' . $survey_value . '</p>';
@@ -320,21 +325,26 @@ $html .= '<div class="field"><label>Submission Date:</label><p> ' . date('Y-m-d 
     $sent = wp_mail($to, $subject, $message, $headers, $attachments);
 
     // Cleanup temporary files
-    foreach ($attachments as $attachment) {
-        if (file_exists($attachment)) {
+    foreach ($attachments as $attachment) 
+    {
+        if (file_exists($attachment)) 
+        {
             unlink($attachment);
         }
     }
 
-    if ($sent) {
+    if ($sent) 
+    {
         // Return a success JSON response
         wp_send_json_success('Form submitted successfully');
-    } else {
+    } 
+    else 
+    {
         // Return an error JSON response
         error_log('Failed to submit the form');
         wp_send_json_error('Failed to submit the form');
     }
-    wp_die();
+        wp_die();
 }
 
 function extract_image_data($value) {

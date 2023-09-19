@@ -2,12 +2,12 @@
 /*
  * Plugin Name:       Contact Form Dynamic Drag & Drop
  * Plugin URI:        https://github.com/sharjeelkhun/contact-form-ddad
- * Description:       Just another contact form plugin. Simple but flexible.
+ * Description:       Just another contact form plugin. Advance dynamic drag & drop, easy to use, flexible.
  * Version:           1.0.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Sharjeel Khan
- * Author URI:        https://github.com/sharjeelkhun/contact-form-ddad
+ * Author URI:        https://beacons.ai/sharjeelkhun/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Update URI:        https://github.com/sharjeelkhun/contact-form-ddad

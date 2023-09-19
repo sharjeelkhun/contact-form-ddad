@@ -31,18 +31,21 @@ add_action('init', 'wporg_custom_post_type');
 
 
 add_action('init', 'my_remove_editor_from_post_type');
-function my_remove_editor_from_post_type() {
-remove_post_type_support( 'contact-form-ddad', 'editor' );
+function my_remove_editor_from_post_type() 
+{
+    remove_post_type_support( 'contact-form-ddad', 'editor' );
 }
 
 
 add_action('add_meta_boxes', 'remove_contact_form_ddad_meta_boxes');
-function remove_contact_form_ddad_meta_boxes() {
+function remove_contact_form_ddad_meta_boxes() 
+{
     remove_meta_box('slugdiv', 'contact-form-ddad', 'normal');
 }
-
 add_filter('post_type_link', 'remove_contact_form_ddad_permalink', 10, 2);
-function remove_contact_form_ddad_permalink($permalink, $post) {
+
+function remove_contact_form_ddad_permalink($permalink, $post) 
+{
     if ($post->post_type == 'contact-form-ddad') {
         return false;
     }
@@ -50,14 +53,16 @@ function remove_contact_form_ddad_permalink($permalink, $post) {
 }
 
 add_filter('get_sample_permalink_html', 'remove_contact_form_ddad_permalink_html', 10, 5);
-function remove_contact_form_ddad_permalink_html($return, $id, $new_title, $new_slug, $post) {
+function remove_contact_form_ddad_permalink_html($return, $id, $new_title, $new_slug, $post) 
+{
     if ($post->post_type == 'contact-form-ddad') {
         return false;
     }
     return $return;
 }
 
-function custom_post_type_updated_messages( $messages ) {
+function custom_post_type_updated_messages( $messages ) 
+{
     $post_type = 'contact-form-ddad';
     $messages[$post_type] = array(
         0 => '', // Unused. Messages start at index 1.
