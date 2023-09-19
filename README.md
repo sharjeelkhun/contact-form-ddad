@@ -1,11 +1,11 @@
-# Contact Form X WordPress Plugin
+# Contact Form Dynamic Drag & Drop WordPress Plugin
 
-![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/contact-form-x)
-![License](https://img.shields.io/github/license/yourusername/contact-form-x)
+![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/contact-form-ddad)
+![License](https://img.shields.io/github/license/yourusername/contact-form-ddad)
 
 ## Description
 
-Contact Form X is a simple yet flexible contact form plugin for WordPress. It allows you to create and customize contact forms quickly and easily. This plugin is designed to be lightweight and user-friendly, making it suitable for both beginners and experienced users.
+Contact Form Dynamic Drag & Drop is a simple yet flexible contact form plugin for WordPress. It allows you to create and customize contact forms quickly and easily. This plugin is designed to be lightweight and user-friendly, making it suitable for both beginners and experienced users.
 
 ## Features
 
@@ -17,7 +17,7 @@ Contact Form X is a simple yet flexible contact form plugin for WordPress. It al
 
 ## Installation
 
-1. Download the latest release from the [GitHub repository](https://github.com/sharjeelkhun/contact-form-x/releases).
+1. Download the latest release from the [GitHub repository](https://github.com/sharjeelkhun/contact-form-ddad/releases).
 2. Upload the plugin files to your WordPress plugins directory.
 3. Activate the plugin through the WordPress admin panel.
 
