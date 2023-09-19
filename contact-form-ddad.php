@@ -1,17 +1,17 @@
  <?php 
 /*
- * Plugin Name:       Contact Form X
- * Plugin URI:        https://example.com/plugins/contact-form-x/
+ * Plugin Name:       Contact Form Dynamic Drag & Drop
+ * Plugin URI:        https://github.com/sharjeelkhun/contact-form-ddad
  * Description:       Just another contact form plugin. Simple but flexible.
  * Version:           1.0.0
- * Requires at least: 5.2
- * Requires PHP:      7.2
- * Author:            VMI
- * Author URI:        https://vibrantmediainc.com
+ * Requires at least: 6.0
+ * Requires PHP:      7.4
+ * Author:            Sharjeel Khan
+ * Author URI:        https://github.com/sharjeelkhun/contact-form-ddad
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Update URI:        https://example.com/my-plugin/
- * Text Domain:       contact-form-x
+ * Update URI:        https://github.com/sharjeelkhun/contact-form-ddad
+ * Text Domain:       contact-form-ddad
  */
 
 if ( ! defined( 'ABSPATH' ) ) 
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) )
 }
 
 
-function generate_form_contact_form_x($post_id) 
+function generate_form_contact_form_ddad($post_id) 
 {
     $json =  get_post_meta($post_id, 'components', true );
     $array = json_decode($json, true);
@@ -59,24 +59,17 @@ function generate_form_contact_form_x($post_id)
     </script>
 
     <!-- React Liberary -->
-
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.form.io/formiojs/formio.form.min.css" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.form.io/formiojs/formio.form.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
-    <script>Formio.createForm(document.getElementById('formio'), {
-  components: [
-  	<?php //echo $json; ?>
-  ]
-});
+    <script>Formio.createForm(document.getElementById('formio'), 
+    {  components: [ 	<?php //echo $json; ?>  ]});
 </script>
-
         <div id="formio" style="padding: 50px;"></div>
-        <input type="hidden" id="contact-form-x-id" value="<?php echo $post_id; ?>"/>
+        <input type="hidden" id="contact-form-ddad-id" value="<?php echo $post_id; ?>"/>
         <div id="success-message"></div>
-
 <script>
   // Add this line to import the Ant Design message component
   const { message } = antd;
@@ -102,9 +95,9 @@ function generate_form_contact_form_x($post_id)
         type: 'POST',
         dataType: 'html',
         data: {
-          action: 'contact_form_x_submit_btn',
+          action: 'contact_form_ddad_submit_btn',
           form_data: JSON.stringify(submission.data),
-          post_id: jQuery('#contact-form-x-id').val(),
+          post_id: jQuery('#contact-form-ddad-id').val(),
         },
         success: function(response) {
           // Handle success
@@ -284,21 +277,20 @@ function createForm(arr)
       $html .= $input . '</div>';
     }
     
-    $html .= '</div></form>';
-    
+    $html .= '</div></form>';    
     return $html;
   }
-function contact_form_x($atts) 
+function contact_form_ddad($atts) 
 {
     $default = array(
         'id' => 1,
     );
     $a = shortcode_atts($default, $atts);
     $post_id =  $a['id'];
-    $form_html = generate_form_contact_form_x($post_id);
+    $form_html = generate_form_contact_form_ddad($post_id);
     return $form_html;
 }
-add_shortcode('contact_form_x', 'contact_form_x');
+add_shortcode('contact_form_ddad', 'contact_form_ddad');
 
 define('PLUGINS_URL',plugin_dir_path( __FILE__ ));
 include( PLUGINS_URL.'admin/custom-post-type/post-type.php');

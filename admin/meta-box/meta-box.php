@@ -1,7 +1,7 @@
 <?php
 
 /* Register a hook to fire only when the "my-cpt-slug" post type is saved */
-add_action( 'save_post_contact-form-x', 'myplugin_save_postdata', 10, 3 );
+add_action( 'save_post_contact-form-ddad', 'myplugin_save_postdata', 10, 3 );
 
 /* When a specific post type's post is saved, saves our custom data
  * @param int     $post_ID Post ID.
@@ -14,7 +14,8 @@ function myplugin_save_postdata( $post_id, $post, $update )
 
   if ( isset( $_POST['components'] ) ) {
     $escaped_json = $_POST['components'];
-    if( $escaped_json ) {
+    if( $escaped_json ) 
+    {
       update_post_meta( $post_id, 'components', $escaped_json );
     }
   }
@@ -23,7 +24,7 @@ function myplugin_save_postdata( $post_id, $post, $update )
 
 function cf_x_add_custom_box() 
 {
-  $screens = ['post', 'contact-form-x'];
+  $screens = ['post', 'contact-form-ddad'];
   foreach ($screens as $screen) 
   {
       add_meta_box(
@@ -44,11 +45,11 @@ function cf_x_add_custom_box()
 function cf_x_display_shortcode() 
 {
   global $post;
-  if ($post->post_type !== 'contact-form-x') 
+  if ($post->post_type !== 'contact-form-ddad') 
   {
       return;
   }
-  echo do_shortcode('[contact-form-x id="' . $post->ID . '"]');
+  echo do_shortcode('[contact-form-ddad id="' . $post->ID . '"]');
 }
 
 function cf_x_settings_init() 
@@ -73,7 +74,7 @@ function cf_x_email_setting_callback()
 
 function wporg_add_custom_box() 
 {
-	$screens = [ 'contact-form-x' ];
+	$screens = [ 'contact-form-ddad' ];
 	foreach ( $screens as $screen )
   {
 		add_meta_box(
@@ -172,14 +173,14 @@ document.getElementById('publish').addEventListener('click', function() {
 }
 
 
-// Add custom meta box to the 'contact-form-x' post type
+// Add custom meta box to the 'contact-form-ddad' post type
 function add_custom_meta_box() 
 {
   add_meta_box(
-    'contact_form_x_email_meta_box', 
+    'contact_form_ddad_email_meta_box', 
     'Email Settings', 
     'render_email_meta_box', 
-    'contact-form-x', 
+    'contact-form-ddad', 
     'side', 
     'low'
   );
@@ -194,7 +195,7 @@ function render_email_meta_box($post)
 
 
     // Add nonce field
-    wp_nonce_field('contact_form_x_email_meta_box', 'contact_form_x_email_meta_box_nonce');
+    wp_nonce_field('contact_form_ddad_email_meta_box', 'contact_form_ddad_email_meta_box_nonce');
   
     // Render Ant Design fields for To and Subject
     echo '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/antd@4.16.13/dist/antd.min.css">
@@ -242,7 +243,7 @@ function save_email_meta_box_11($post_id)
       return;
 
   // Verify the nonce before proceeding
-  if (!isset($_POST['contact_form_x_email_meta_box_nonce']) || !wp_verify_nonce($_POST['contact_form_x_email_meta_box_nonce'], 'contact_form_x_email_meta_box'))
+  if (!isset($_POST['contact_form_ddad_email_meta_box_nonce']) || !wp_verify_nonce($_POST['contact_form_ddad_email_meta_box_nonce'], 'contact_form_ddad_email_meta_box'))
       return;
       print_r($_POST);
   // Check if user has permission to save data
@@ -265,7 +266,7 @@ function add_shortcode_metabox()
     'shortcode_metabox', 
     'Form Shortcode', 
     'shortcode_metabox_callback', 
-    'contact-form-x', 
+    'contact-form-ddad', 
     'side', 
     'low' 
   );
@@ -371,7 +372,7 @@ function my_custom_shortcode_function( $post_id )
   $my_custom_data = sanitize_text_field( $my_custom_data );
 
   // Generate the shortcode based on the custom data
-  $shortcode = "[contact_form_x id= '$post_id ']";
+  $shortcode = "[contact_form_ddad id= '$post_id ']";
   
   return $shortcode;
 }

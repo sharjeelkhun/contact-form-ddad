@@ -4,12 +4,12 @@
 function wpdocs_enqueue_custom_admin_style() 
   {
     global $post_type;
-    if( 'contact-form-x' == $post_type )
+    if( 'contact-form-ddad' == $post_type )
     {
     wp_enqueue_style( 'font_awesome','https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
     wp_enqueue_style( 'bootstrap', 'https://bootswatch.com/4/cosmo/bootstrap.min.css');
     wp_enqueue_style( 'formio','https://cdn.form.io/formiojs/formio.full.min.css');
-    wp_enqueue_style( 'style', plugins_url( 'CONTACT-FORM-X/admin/css/style.css',__DIR__ ));
+    wp_enqueue_style( 'style', plugins_url( 'contact-form-ddad/admin/css/style.css',__DIR__ ));
     }
   }
   add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_style' );
@@ -19,7 +19,7 @@ function wpdocs_enqueue_custom_admin_style()
 function wpdocs_enqueue_custom_admin_script() 
   {
     global $post_type;
-    if( 'contact-form-x' == $post_type )
+    if( 'contact-form-ddad' == $post_type )
     {
     wp_enqueue_script('bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js');
     wp_enqueue_script( 'bootstrap_jquery', '//code.jquery.com/jquery-3.4.1.slim.min.js', array(), '3.3.1', true );
@@ -73,14 +73,14 @@ function changeMatchingClasses()
 
 // Disable Drag and drop metabox
 function disable_drag_metabox() {
-  if ( 'contact-form-x' === get_current_screen()->post_type ) {
+  if ( 'contact-form-ddad' === get_current_screen()->post_type ) {
     wp_deregister_script( 'postbox' );
   }
 }
 
 // Disable Drag and drop metabox on "Add New" page
 function disable_drag_metabox_new() {
-  if ( 'contact-form-x' === get_current_screen()->post_type ) {
+  if ( 'contact-form-ddad' === get_current_screen()->post_type ) {
     wp_deregister_script( 'postbox' );
   }
 }
@@ -91,12 +91,12 @@ add_action( 'load-post-new.php', 'disable_drag_metabox_new' );
 function wpdocs_enqueue_custom_style() 
   {
     global $post_type;
-    if( 'contact-form-x' == $post_type )
+    if( 'contact-form-ddad' == $post_type )
     {
     wp_enqueue_style( 'font_awesome','https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
     wp_enqueue_style( 'bootstrap', 'https://bootswatch.com/4/cosmo/bootstrap.min.css');
     wp_enqueue_style( 'formio','https://cdn.form.io/formiojs/formio.full.min.css');
-    wp_enqueue_style( 'style', plugins_url( 'CONTACT-FORM-X/admin/css/style.css',__DIR__ ));
+    wp_enqueue_style( 'style', plugins_url( 'contact-form-ddad/admin/css/style.css',__DIR__ ));
     }
   }
   add_action( 'wp_enqueue_scripts', 'wpdocs_enqueue_custom_style' );
@@ -106,7 +106,7 @@ function wpdocs_enqueue_custom_style()
 function wpdocs_enqueue_custom_script() 
   {
     global $post_type;
-    if( 'contact-form-x' == $post_type )
+    if( 'contact-form-ddad' == $post_type )
     {
     wp_enqueue_script('bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js');
     wp_enqueue_script( 'bootstrap_jquery', '//code.jquery.com/jquery-3.4.1.slim.min.js', array(), '3.3.1', true );
@@ -125,10 +125,10 @@ function wporg_json( $post )
 }
 
 // AJAX handler for form submission
-add_action('wp_ajax_contact_form_x_submit_btn', 'contact_form_x_submit');
-add_action('wp_ajax_nopriv_contact_form_x_submit_btn', 'contact_form_x_submit');
+add_action('wp_ajax_contact_form_ddad_submit_btn', 'contact_form_ddad_submit');
+add_action('wp_ajax_nopriv_contact_form_ddad_submit_btn', 'contact_form_ddad_submit');
 
-function contact_form_x_submit() {
+function contact_form_ddad_submit() {
     $form_data = $_POST['form_data'];
     // Process the form data and send the email
 
@@ -364,16 +364,16 @@ function hide_post_type_options()
 {
     global $post;
 
-    // Check if it's your desired post type
-    if ($post->post_type === 'contact-form-x') {
+    // Check if $post is defined and not null
+    if ($post && $post->post_type === 'contact-form-ddad') {
         ?>
         <style>
-            .post-type-contact-form-x .misc-pub-section.curtime.misc-pub-curtime a,
-            .post-type-contact-form-x div#visibility,
-            .post-type-contact-form-x .misc-pub-section.misc-pub-post-status a,
-            .post-type-contact-form-x #minor-publishing-actions,
-            .post-type-contact-form-x .row-actions span.view,
-            .post-type-contact-form-x .row-actions span.inline.hide-if-no-js
+            .post-type-contact-form-ddad .misc-pub-section.curtime.misc-pub-curtime a,
+            .post-type-contact-form-ddad div#visibility,
+            .post-type-contact-form-ddad .misc-pub-section.misc-pub-post-status a,
+            .post-type-contact-form-ddad #minor-publishing-actions,
+            .post-type-contact-form-ddad .row-actions span.view,
+            .post-type-contact-form-ddad .row-actions span.inline.hide-if-no-js
             {
                 display: none;
             }
@@ -384,12 +384,13 @@ function hide_post_type_options()
 add_action('admin_head', 'hide_post_type_options');
 
 
+
 function remove_view_option_from_admin_bar() 
 {
     global $wp_admin_bar, $post;
 
     // Check if it's your desired post type
-    if ($post && $post->post_type === 'contact-form-x') {
+    if ($post && $post->post_type === 'contact-form-ddad') {
         $wp_admin_bar->remove_menu('view');
     }
 }

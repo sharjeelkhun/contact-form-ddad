@@ -1,13 +1,13 @@
-.post-type-contact-form-x input.formio-select-autocomplete-input 
+.post-type-contact-form-ddad input.formio-select-autocomplete-input 
 {
     display: none;
 }
-.post-type-contact-form-x .btn:not([class*=btn-label-]):not([class*=btn-outline-]) 
+.post-type-contact-form-ddad .btn:not([class*=btn-label-]):not([class*=btn-outline-]) 
 {
   /* box-shadow: 0px 2px 11px rgba(165, 163, 174, 0.4); */
   border-radius: 5px;
 }
-.post-type-contact-form-x .formcomponents .formcomponent 
+.post-type-contact-form-ddad .formcomponents .formcomponent 
 {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -20,77 +20,77 @@
     cursor: move !important;
     text-align: center;
 }
-.post-type-contact-form-x .formcomponents .formcomponent i 
+.post-type-contact-form-ddad .formcomponents .formcomponent i 
 {
     margin-right: 0 !important;
     text-align: center;
     font-size: 20px;
     margin-bottom: 6px;
 }
-.post-type-contact-form-x div#group-advanced
+.post-type-contact-form-ddad div#group-advanced
 {
     display: grid;
 }
-.post-type-contact-form-x .card-body 
+.post-type-contact-form-ddad .card-body 
 {
     display: flex;
     flex-wrap: wrap;
     background: #e6e9ec;
     gap: 3px;
 }
-.post-type-contact-form-x div#group-advanced
+.post-type-contact-form-ddad div#group-advanced
 {
     display: grid;
 }
-.post-type-contact-form-x .card-body 
+.post-type-contact-form-ddad .card-body 
 {
     display: flex;
     flex-wrap: wrap;
     background: #e6e9ec;
     gap: 3px;
 }
-.post-type-contact-form-x .formbuilder 
+.post-type-contact-form-ddad .formbuilder 
 {
     display: flex;
     flex-wrap: wrap;
 }
-.post-type-contact-form-x .formcomponents 
+.post-type-contact-form-ddad .formcomponents 
 {
     width: 25%;
     flex: 25%;
     max-width: 25%;
 }
-.post-type-contact-form-x .formarea 
+.post-type-contact-form-ddad .formarea 
 {
     width: 75%;
     max-width: 75%;
     flex: 75%;
 }
-.post-type-contact-form-x .card.form-builder-panel 
+.post-type-contact-form-ddad .card.form-builder-panel 
 {
     box-shadow: unset;
     margin: 0;
 }
-.post-type-contact-form-x .card.form-builder-panel
+.post-type-contact-form-ddad .card.form-builder-panel
 {
     box-shadow: unset;
     margin: 0;
 }
-.post-type-contact-form-x .builder-sidebar_scroll 
+.post-type-contact-form-ddad .builder-sidebar_scroll 
 {
     padding: 10px;
 }
-.post-type-contact-form-x .btn-primary:not(:disabled):not(.disabled):active 
+.post-type-contact-form-ddad .btn-primary:not(:disabled):not(.disabled):active 
 {
     display: initial !important;
     width: calc(33.33% - 6px);
 }
-.post-type-contact-form-x .btn-primary:not(:disabled):not(.disabled):active i 
+.post-type-contact-form-ddad .btn-primary:not(:disabled):not(.disabled):active i 
 {
     width: 100% !important;
     display: block !important;
 }
-.post-type-contact-form-x button.btn.btn-block.builder-group-button 
+.post-type-contact-form-ddad button.btn.btn-block.builder-group-button 
 {
     box-shadow: unset;
     align-items: start;
@@ -101,33 +101,33 @@
     border-radius: 4px;
     background: #fff;
 }
-.post-type-contact-form-x .form-check {
+.post-type-contact-form-ddad .form-check {
   display: block;
   min-height: 1.378125rem;
   padding-left: 1.7em;
   margin-bottom: 0.125rem;
 }
-.post-type-contact-form-x .form-check .form-check-input {
+.post-type-contact-form-ddad .form-check .form-check-input {
   float: left;
   margin-left: -1.7em;
   margin-bottom: 0;
   position: relative;
   top: 4px;
 }
-.post-type-contact-form-x .builder-sidebar .card-header, 
-.post-type-contact-form-x .builder-sidebar .card-footer 
+.post-type-contact-form-ddad .builder-sidebar .card-header, 
+.post-type-contact-form-ddad .builder-sidebar .card-footer 
 {
   padding: 10px;
   background: #1967be24;
   border-bottom: 0;
   border: unset;
 }
-.post-type-contact-form-x .formio-dialog-content .card 
+.post-type-contact-form-ddad .formio-dialog-content .card 
 {
     max-width: 100%;
     margin-top: 0;
 }
-.post-type-contact-form-x .formcomponents .formcomponent 
+.post-type-contact-form-ddad .formcomponents .formcomponent 
 {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -139,7 +139,7 @@
     border-color: #ffffff;
     cursor: move !important;
 }
-.post-type-contact-form-x .formcomponents .formcomponent i 
+.post-type-contact-form-ddad .formcomponents .formcomponent i 
 {
     margin-right: 0 !important;
     text-align: center;
@@ -147,29 +147,29 @@
     margin-bottom: 6px;
     color: #157cfb;
 }
-.post-type-contact-form-x div#group-advanced 
+.post-type-contact-form-ddad div#group-advanced 
 {
     display: grid;
 }
-.post-type-contact-form-x .card-body 
+.post-type-contact-form-ddad .card-body 
 {
     display: flex;
     flex-wrap: wrap;
     background: #1967be24;
     gap: 3px;
 }
-.post-type-contact-form-x .formbuilder 
+.post-type-contact-form-ddad .formbuilder 
 {
     display: flex;
     flex-wrap: wrap;
 }
-.post-type-contact-form-x .formcomponents 
+.post-type-contact-form-ddad .formcomponents 
 {
     width: 25%;
     flex: 25%;
     max-width: 25%;
 }
-.post-type-contact-form-x .formarea 
+.post-type-contact-form-ddad .formarea 
 {
     width: 75%;
     max-width: 75%;
@@ -177,18 +177,18 @@
     padding-right: 2%;
     padding-top: 1%;
 }
-.post-type-contact-form-x .card.form-builder-panel 
+.post-type-contact-form-ddad .card.form-builder-panel 
 {
     box-shadow: unset;
     margin: 0;
     /* border-color: #2e81e0; */
     border: unset;
 }
-.post-type-contact-form-x .builder-sidebar_scroll
+.post-type-contact-form-ddad .builder-sidebar_scroll
 {
     padding: 10px;
 }
-.post-type-contact-form-x button.btn.btn-block.builder-group-button 
+.post-type-contact-form-ddad button.btn.btn-block.builder-group-button 
 {
     box-shadow: unset;
     align-items: start;
@@ -202,10 +202,10 @@
     letter-spacing: 0.3px;
     border-radius: unset;
 }
-.post-type-contact-form-x .btn-group-xxs>.btn, 
-.post-type-contact-form-x .btn-xxs, 
-.post-type-contact-form-x .component-btn-group 
-.post-type-contact-form-x .component-settings-button 
+.post-type-contact-form-ddad .btn-group-xxs>.btn, 
+.post-type-contact-form-ddad .btn-xxs, 
+.post-type-contact-form-ddad .component-btn-group 
+.post-type-contact-form-ddad .component-settings-button 
 {
     width: 32px;
     height: 32px;
@@ -215,82 +215,82 @@
     position: relative;
     border-radius: 6px;
 }
-.post-type-contact-form-x .component-btn-group .component-settings-button i 
+.post-type-contact-form-ddad .component-btn-group .component-settings-button i 
 {
     font-size: 16px;
     line-height: 24px;
 }
-.post-type-contact-form-x button.btn.btn-block.builder-group-button:hover 
+.post-type-contact-form-ddad button.btn.btn-block.builder-group-button:hover 
 {
     border-color: #1f68bb;
 }
-.post-type-contact-form-x .component-btn-group .component-settings-button:hover 
+.post-type-contact-form-ddad .component-btn-group .component-settings-button:hover 
 {
     color: #fff;
     background-color: #1f68bb !important;
     border-color: #1f68bb !important;
 }
-.post-type-contact-form-x .btn-secondary:hover 
+.post-type-contact-form-ddad .btn-secondary:hover 
 {
     background: #1f68bb;
     border-color: #1f68bb;
 }
-body.post-type-contact-form-x .component-btn-group .btn-danger:hover 
+body.post-type-contact-form-ddad .component-btn-group .btn-danger:hover 
 {
     color: #fff !important;
     background-color: #d34c4d !important;
     border-color: #d34c4d !important;
 }
-.post-type-contact-form-x .btn:not([class*=btn-label-]):not([class*=btn-outline-]):hover 
+.post-type-contact-form-ddad .btn:not([class*=btn-label-]):not([class*=btn-outline-]):hover 
 {
     box-shadow: 0px 2px 11px rgba(165, 163, 174, 0.4);
 }
-.post-type-contact-form-x .formio-component-form .card-body 
+.post-type-contact-form-ddad .formio-component-form .card-body 
 {
     background: transparent;
 }
-.post-type-contact-form-x .formio-component-form .card-body 
+.post-type-contact-form-ddad .formio-component-form .card-body 
 {
     background: transparent;
 }
-.post-type-contact-form-x .preview-panel .card-body 
+.post-type-contact-form-ddad .preview-panel .card-body 
 {
     background: transparent;
 }
-.post-type-contact-form-x .has-feedback .form-control 
+.post-type-contact-form-ddad .has-feedback .form-control 
 {
     border-color: #8c8f94;
     border-radius: unset;
 }
-.post-type-contact-form-x .nav-item 
+.post-type-contact-form-ddad .nav-item 
 {
     margin-bottom: 0;
 }
-.post-type-contact-form-x .nav-tabs .nav-link 
+.post-type-contact-form-ddad .nav-tabs .nav-link 
 {
     border-radius: 5px 5px 0px 0px;
     text-decoration: unset;
     border-bottom: unset;
 }
-.post-type-contact-form-x .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover
+.post-type-contact-form-ddad .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover
 {
     box-shadow: unset;
 }
-.post-type-contact-form-x .formio-dialog.formio-dialog-theme-default *:not(.fa) 
+.post-type-contact-form-ddad .formio-dialog.formio-dialog-theme-default *:not(.fa) 
 {
     font-family: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
-.post-type-contact-form-x .formio-dialog.formio-dialog-theme-default .formio-dialog-content 
+.post-type-contact-form-ddad .formio-dialog.formio-dialog-theme-default .formio-dialog-content 
 {
     max-height: 95%;
     top: 3%;
 }
-.post-type-contact-form-x .lead,
-.post-type-contact-form-x .card-title 
+.post-type-contact-form-ddad .lead,
+.post-type-contact-form-ddad .card-title 
 {
     font-weight: 500;
 }
-.post-type-contact-form-x .meta-box-sortables .shortcode
+.post-type-contact-form-ddad .meta-box-sortables .shortcode
 {
     font-size: 16px;
     border: none;
@@ -302,27 +302,27 @@ body.post-type-contact-form-x .component-btn-group .btn-danger:hover
     font-weight: 600;
     text-align: center;
 }
-.post-type-contact-form-x .card 
+.post-type-contact-form-ddad .card 
 {
     padding: 0;
 }
-.post-type-contact-form-x #poststuff .stuffbox>h3,
-.post-type-contact-form-x #poststuff h2, 
-.post-type-contact-form-x #poststuff h3.hndle
+.post-type-contact-form-ddad #poststuff .stuffbox>h3,
+.post-type-contact-form-ddad #poststuff h2, 
+.post-type-contact-form-ddad #poststuff h3.hndle
 {
     font-weight: 600;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
-.post-type-contact-form-x p 
+.post-type-contact-form-ddad p 
 {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
-.post-type-contact-form-x #shortcode_metabox .handle-actions,
-.post-type-contact-form-x #normal-sortables .handle-actions 
+.post-type-contact-form-ddad #shortcode_metabox .handle-actions,
+.post-type-contact-form-ddad #normal-sortables .handle-actions 
 {
     display:none;
 }
-.post-type-contact-form-x .drag-and-drop-alert.alert.alert-info.no-drag 
+.post-type-contact-form-ddad .drag-and-drop-alert.alert.alert-info.no-drag 
 {
     height: 150px;
     justify-content: center;
@@ -330,34 +330,34 @@ body.post-type-contact-form-x .component-btn-group .btn-danger:hover
     display: flex;
     font-size: 18px;
 }
-/* .post-type-contact-form-x div#builder
+/* .post-type-contact-form-ddad div#builder
 {
     margin-top: 30px;
     margin-bottom: 20px;
 } */
-.post-type-contact-form-x #postbox-container-2 .inside 
+.post-type-contact-form-ddad #postbox-container-2 .inside 
 {
     padding-right: 0;
     margin-top: 0;
     padding-bottom: 0;
 }
-.post-type-contact-form-x #post-body-content .inside 
+.post-type-contact-form-ddad #post-body-content .inside 
 {
     height: 0;
 }
-.post-type-contact-form-x button.btn.btn-block.builder-group-button 
+.post-type-contact-form-ddad button.btn.btn-block.builder-group-button 
 {
     border: 1px solid #2e81e0;
 }
-.post-type-contact-form-x button.btn.btn-block.builder-group-button.collapsed 
+.post-type-contact-form-ddad button.btn.btn-block.builder-group-button.collapsed 
 {
     border: 1px solid #c3c4c7;
 }
-.post-type-contact-form-x .formcomponents 
+.post-type-contact-form-ddad .formcomponents 
 {
     background: #dfeaf5;
 }
-.post-type-contact-form-x #titlediv #title-prompt-text 
+.post-type-contact-form-ddad #titlediv #title-prompt-text 
 {
     padding-top: 0;
     margin-bottom: 0;
